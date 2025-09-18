@@ -1,17 +1,3 @@
-/whmcs/
-└── modules/
-    └── servers/
-        └── incus/
-            ├── incus.php             # 模块主文件，包含所有WHMCS钩子函数
-            ├── lib/                  # 存放核心逻辑和API交互的库文件夹
-            │   └── IncusAPI.php      # 封装了所有与Incus API交互的类
-            ├── templates/            # 存放客户端区域（Client Area）的自定义模板
-            │   └── clientarea.tpl    # 自定义客户端页面的模板文件
-            ├── hooks.php             # (可选) 用于更深度集成的钩子文件
-            ├── logo.gif              # 在产品设置页面显示的模块Logo
-            └── README.md             # 项目说明文档
-            
-            
 # WHMCS Incus 供应模块
 
 这是一个WHMCS设计的供应模块，用于自动化管理Incus容器实例。
@@ -71,4 +57,5 @@ incus config trust add-certificate ./whmcs.crt
         - 创建一个名为 `OS` 的选项，值为Incus中存在的镜像别名 (e.g., `ubuntu/22.04`, `debian/12`)。
     - 保存产品设置。
 
-现在，客户下单购买此产品后，模块就会自动在Incus上创建容器了。            
+6.  **复制templates/config.inc.php到WHMCS的/templates/orderforms/standard_cart下:**
+    - 现在，客户下单购买此产品后，模块就会自动在Incus上创建容器了。       
