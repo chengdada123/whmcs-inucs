@@ -7,7 +7,6 @@
 - **自动化部署**: 自动创建、暂停 (停止)、恢复 (启动) 和终止Incus容器。
 - **客户端管理**: 客户可以在WHMCS客户端区域进行开机、关机、重启、重装系统等操作。
 - **快照管理**: 客户可以创建、恢复和删除自己的容器快照。
-- **资源配置**: 管理员可以在WHMCS产品设置中，通过可配置选项 (Configurable Options) 让客户自定义CPU、内存、硬盘大小。
 - **网络支持**: 支持基于Incus `managed` 网络的NAT模式，并能自动获取和显示IPv4/IPv6地址。
 
 ## 安全须知
@@ -51,4 +50,7 @@ incus config trust add-certificate ./whmcs.crt
     - **Server Group**: 选择您刚才创建的服务器组。
 
 6.  **复制templates/config.inc.php到WHMCS的/templates/orderforms/standard_cart下:**
-    - 现在，客户下单购买此产品后，模块就会自动在Incus上创建容器了。       
+    - 现在，客户下单购买此产品后，模块就会自动在Incus上创建容器了。
+      
+7.  **设置定时任务**:
+    - php -q /modules/servers/incus/cron.php
