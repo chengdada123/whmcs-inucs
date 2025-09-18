@@ -52,5 +52,5 @@ incus config trust add-certificate ./whmcs.crt
 6.  **复制templates/config.inc.php到WHMCS的/templates/orderforms/standard_cart下:**
     - 现在，客户下单购买此产品后，模块就会自动在Incus上创建容器了。
       
-7.  **设置定时任务**:
+7.  **设置定时任务(最好每1分钟触发一次，因为容器再重启和重做系统后网卡的流量都会清零)**:
     - php -q /modules/servers/incus/cron.php
