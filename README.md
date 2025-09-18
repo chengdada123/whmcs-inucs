@@ -23,8 +23,8 @@
     在您的Incus服务器上，为WHMCS服务器生成一个客户端证书:
     ```bash
     openssl genrsa -out whmcs.key 4096
-openssl req -new -key whmcs.key -out whmcs.csr -subj "/CN=whmcs"
-openssl x509 -req -in whmcs.csr -signkey whmcs.key -out whmcs.crt -days 3650
+    openssl req -new -key whmcs.key -out whmcs.csr -subj "/CN=whmcs"
+    openssl x509 -req -in whmcs.csr -signkey whmcs.key -out whmcs.crt -days 3650
 #添加信任
 incus config trust add-certificate ./whmcs.crt 
     ```
