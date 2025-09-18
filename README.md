@@ -49,13 +49,6 @@ incus config trust add-certificate ./whmcs.crt
     - 创建或编辑一个产品，切换到 "Module Settings" 选项卡。
     - **Module Name**: 选择 `Incus Provisioning Module`。
     - **Server Group**: 选择您刚才创建的服务器组。
-    - **配置模块选项**: 填写默认的网络和存储池名称。
-    - **创建可配置选项 (Configurable Options)** (可选，但推荐):
-        - 创建一个名为 `CPU` 的选项，值为核心数 (e.g., 1, 2, 4)。
-        - 创建一个名为 `Memory` 的选项，值为内存大小MB (e.g., 512, 1024, 2048)。
-        - 创建一个名为 `Disk` 的选项，值为磁盘大小GB (e.g., 10, 20, 50)。
-        - 创建一个名为 `OS` 的选项，值为Incus中存在的镜像别名 (e.g., `ubuntu/22.04`, `debian/12`)。
-    - 保存产品设置。
 
 6.  **复制templates/config.inc.php到WHMCS的/templates/orderforms/standard_cart下:**
     - 现在，客户下单购买此产品后，模块就会自动在Incus上创建容器了。       
